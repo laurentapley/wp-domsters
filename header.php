@@ -9,5 +9,23 @@
   <!-- <link rel="apple-touch-icon" href="apple-touch-icon.png"> -->
   <!-- Place favicon.ico in the root directory -->
 </head>
+<header id="header">
+  <img src="<?php bloginfo('template_directory'); ?>/img/logo.gif" alt="Jay Skript and the Domsters" />
+</header>
+
+  <?php
+         wp_nav_menu( array(
+             'menu'              => 'primary',
+             'theme_location'    => 'primary',
+             'depth'             => 2,
+             'container'         => 'div',
+             'container_class'   => '',
+             'container_id'      => 'navigation',
+             'menu_class'        => '',
+             'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+             'walker'            => new wp_bootstrap_navwalker())
+         );
+     ?>
+
 <?php wp_head(); ?>
 <body <?php body_class(); ?>>

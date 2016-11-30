@@ -46,12 +46,15 @@ function prepareSlideshow() {
   var slideshow = document.createElement("div");
   slideshow.setAttribute("id","slideshow");
   var frame = document.createElement("img");
-  // frame.setAttribute("src","../img/frame.gif");
+
+
+  console.log( wsd_home.template_url );
+  frame.setAttribute("src", wsd_home.template_url + "/img/frame.gif");
   frame.setAttribute("alt","");
   frame.setAttribute("id","frame");
   slideshow.appendChild(frame);
   var preview = document.createElement("img");
-  // preview.setAttribute("src","../img/slideshow.gif");
+  preview.setAttribute("src", wsd_home.template_url + "/img/slideshow.gif");
   preview.setAttribute("alt","a glimpse of what awaits you");
   preview.setAttribute("id","preview");
   slideshow.appendChild(preview);
