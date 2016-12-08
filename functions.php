@@ -6,21 +6,36 @@ function theme_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
 
+function tutsplus_add_google_fonts() {
+  wp_register_style( 'googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300');
+  wp_enqueue_style( 'googleFonts');
+}
+add_action( 'wp_enqueue_scripts', 'tutsplus_add_google_fonts' );
+
 // /* add JavaScript */
 
-function localize_vars() {
-    return array(
-        'stylesheet_directory' => get_stylesheet_directory_uri()
-    );
-}
 function theme_js() {
-    // wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.min.js', array('jquery, tether'), '', true );
-    wp_enqueue_script( 'ie10_js', get_template_directory_uri() . '/js/ie10-viewport-bug-workaround.js', array('jquery'), '', true );
-    wp_enqueue_script( 'global_js', get_template_directory_uri() . '/js/global.js', '', true );
+    wp_enqueue_script( 'global_js', get_template_directory_uri() . '/js/global.js', '','', true );
 
-    wp_enqueue_script( 'home_js', get_template_directory_uri() . '/js/home.js', '', true );
-    $wsd_home = array( 'template_url' => get_bloginfo('template_url') );
-    wp_localize_script( 'home_js', 'wsd_home', $wsd_home );
+    // add condition to only pull home.js on home page
+    if ( is_page( '4' ) ) {
+      wp_enqueue_script( 'home_js', get_template_directory_uri() . '/js/home.js', '', '', true );
+      $wsd_home = array( 'template_url' => get_bloginfo('template_url') );
+      wp_localize_script( 'home_js', 'wsd_home', $wsd_home );
+    }
+    if ( is_page( '14' ) ) {
+      wp_enqueue_script( 'photos_js', get_template_directory_uri() . '/js/photos.js', '', '', true );
+      $wsd_photos = array( 'template_url' => get_bloginfo('template_url') );
+      wp_localize_script( 'photos_js', 'wsd_photos', $wsd_photos );
+    }
+    if ( is_page( '32' ) ) {
+      wp_enqueue_script( 'about_js', get_template_directory_uri() . '/js/about.js', '', '', true );
+
+      wp_enqueue_script( 'photos_js', get_template_directory_uri() . '/js/photos.js', '','', true );
+
+      wp_enqueue_script( 'about_js', get_template_directory_uri() . '/js/about.js', '','', true );
+    }
+
 }
 add_action( 'wp_enqueue_scripts', 'theme_js' );
 
@@ -56,4 +71,5 @@ create_widget( 'Front Page Center', 'front-center', 'Displays on the center of t
 create_widget( 'Front Page Right', 'front-right', 'Displays on the right of the hompage');
 // sidebar
 create_widget( 'Page Sidebar', 'page', 'Displays on side of pages with sidebar');
+create_widget( 'Blog Sidebar', 'blog', 'Displays on side of pages in blog section');
 ?>

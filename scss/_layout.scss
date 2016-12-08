@@ -9,7 +9,6 @@ body {
   background-attachment: fixed;
   background-position: top left;
   background-repeat: repeat-x;
-  max-width: 80em;
 }
 header {
   background-image: url(../img/guitarist.gif);
@@ -29,6 +28,9 @@ header {
   border-top-width: 0;
   padding-left: 1%;
 }
+
+h1 {font-family: 'Open Sans', sans-serif;}
+
 ul{
   margin-bottom: 0px;
 }
@@ -49,13 +51,19 @@ ul{
 #navigation li a:first-child {
   border-left: solid .1em;
 }
-.container {
+div.body-container {
+  margin: auto;
+}
+div.container {
+  margin: auto;
   width: 100%;
+  min-height: 100vh;
   border-width: .1em;
   border-style: solid;
   border-top-width: 0;
   padding: 2em 10%;
   line-height: 1.8em;
+
 }
 #about header {
   background-image: url(../img/lineup.gif);
@@ -114,4 +122,63 @@ fieldset {
 }
 td {
   padding: .5em 3em;
+}
+
+footer {
+  background-image: url(../img/navbar.gif);
+  background-position: bottom left;
+  background-repeat: repeat-x;
+  padding-left: 1%;
+  text-align: center;
+  p {
+    padding: 1%;
+    text-transform: uppercase;
+    font-size: .5rem;
+    color: #ec8;
+  }
+}
+
+// BLOG
+article {
+  background-color: #ec8;
+  padding: 0%;
+  padding-top: 0%;
+  margin: 2%;
+  h2 {
+    padding: 3%;
+    width: 100%;
+    background: linear-gradient(rgb(159, 162, 182),rgb(89, 86, 107));
+   }
+  a {
+    color: #edc;
+    background-color: transparent;
+
+  }
+  p {
+    margin: 0px;
+    padding: 0% 3%;
+  }
+  }
+.excerpt {
+  margin: 0px;
+  padding: 2%;
+  p {
+  }
+}
+
+//ABOUT
+.popover {
+  background-color: red;
+}
+
+//SIDEBAR
+aside.blog {
+  margin-top: 50px;
+
+}
+
+//photos
+div#bwg_container1_0 {
+  width: 100%;
+  margin: 0px;
 }

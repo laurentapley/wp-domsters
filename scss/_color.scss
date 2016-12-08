@@ -1,27 +1,18 @@
-.current-menu-item > a {
-    background: #000;
-}
 
 body {
   color: #fb5;
   background-color: #334;
 }
-a:link {
-  color: #445;
-  background-color: #eb6;
-}
-a:visited {
-  color: #345;
-  background-color: #eb6;
+a {
+  color: #778;
+  background-color: #ec8;
+  padding: 3px;;
 }
 a:hover {
   color: #667;
   background-color: #fb5;
 }
-a:active {
-  color: #778;
-  background-color: #ec8;
-}
+
 #header {
   color: #ec8;
   background-color: #334;
@@ -53,12 +44,7 @@ a:active {
   color: #667;
   background-color: #ec8;
 }
-#navigation a.here:link,
-#navigation a.here:hover
-{
-  color: #eef;
-  background-color: #799;
-}
+
 
 .container img {
   border-color: #ba9;
@@ -75,7 +61,10 @@ tr td {
   color: #223;
   background-color: #eb6;
 }
-tr.odd td {
+tr.gigpress-row:hover td {
+  background-color: #ba9;
+}
+tr.gigpress-info td {
   color: #223;
   background-color: #ec8;
 }
