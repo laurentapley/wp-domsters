@@ -1,6 +1,10 @@
+<?php
+/*
+  Template Name: About Page with sidebar Template
+ */
+?>
 
 <?php get_header(); ?>
-{PAGE}
   <div class="container">
     <div class="row">
       <div class="col-lg-9">
@@ -20,7 +24,7 @@
 
         <?php endif; ?>
       </div>
-      <?php get_sidebar('contact'); ?>
+      <?php get_sidebar(); ?>
     </div>
   </div>
 <?php get_footer(); ?>

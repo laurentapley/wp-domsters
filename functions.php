@@ -1,4 +1,6 @@
 <?php
+
+//STYLES
 function theme_styles() {
     wp_enqueue_style( 'custom_css', get_template_directory_uri() . '/css/bootstrap.css' );
     wp_enqueue_style( 'start_css', get_template_directory_uri() . '/css/style.css' );
@@ -6,6 +8,7 @@ function theme_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'theme_styles' );
 
+//GOOGLE FONTS
 function tutsplus_add_google_fonts() {
   wp_register_style( 'googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300');
   wp_enqueue_style( 'googleFonts');
@@ -23,7 +26,7 @@ function theme_js() {
       $wsd_home = array( 'template_url' => get_bloginfo('template_url') );
       wp_localize_script( 'home_js', 'wsd_home', $wsd_home );
     }
-    if ( is_page( '14' ) ) {
+    if ( is_page( '6' ) ) {
       wp_enqueue_script( 'photos_js', get_template_directory_uri() . '/js/photos.js', '', '', true );
       $wsd_photos = array( 'template_url' => get_bloginfo('template_url') );
       wp_localize_script( 'photos_js', 'wsd_photos', $wsd_photos );
@@ -31,10 +34,10 @@ function theme_js() {
     if ( is_page( '32' ) ) {
       wp_enqueue_script( 'about_js', get_template_directory_uri() . '/js/about.js', '', '', true );
 
-      wp_enqueue_script( 'photos_js', get_template_directory_uri() . '/js/photos.js', '','', true );
-
       wp_enqueue_script( 'about_js', get_template_directory_uri() . '/js/about.js', '','', true );
     }
+
+      wp_enqueue_script( 'bootstrap_js', get_template_directory_uri() . '/node_modules/bootstrap/dist/js/bootstrap.min.js', array('jquery, tether'), '', true );
 
 }
 add_action( 'wp_enqueue_scripts', 'theme_js' );
@@ -54,6 +57,8 @@ function register_theme_menus() {
 }
 add_action( 'init', 'register_theme_menus' );
 
+//WIDGETS
+
 function create_widget($name, $id, $description) {
     register_sidebar(array(
       'name' => __( $name ),
@@ -72,4 +77,8 @@ create_widget( 'Front Page Right', 'front-right', 'Displays on the right of the 
 // sidebar
 create_widget( 'Page Sidebar', 'page', 'Displays on side of pages with sidebar');
 create_widget( 'Blog Sidebar', 'blog', 'Displays on side of pages in blog section');
+
+create_widget( 'Contact Sidebar', 'contact', 'Displays on side contact page');
+
+add_theme_support( 'post-thumbnails' ); 
 ?>

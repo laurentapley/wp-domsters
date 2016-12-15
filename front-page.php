@@ -1,14 +1,18 @@
+
 <?php get_header(); ?>
-[front-page.php]
   <div class="container">
     <div class="row">
-    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <?php the_content(); ?>
-    <?php endwhile; endif; ?>
-    <aside class="aside" id="aside">
-
-    </aside>
-
+      <div class="col-md-12">
+        <div class="intro">
+        <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+        <?php the_content(); ?>
+        <div class="aside" id="aside">
+        </div>
+        <?php endwhile; endif; ?>
+      </div>
+    </div>
+    </div>
+  <div class="row">
     <div class="col-md-4">
         <?php if ( dynamic_sidebar( 'front-left' ) ); ?>
     </div>

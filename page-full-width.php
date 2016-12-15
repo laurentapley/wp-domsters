@@ -3,16 +3,16 @@
   Template Name: Full Width Template
  */
 ?>
-<?php get_header(); ?>
 
+<?php get_header(); ?>
   <div class="container">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12" id="gallery">
         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
           <!-- tbs class for headers -->
 
             <!-- the_title() is WP function that shows the title of the post -->
-            
+
 
           <!-- WP function that outputs post content -->
           <?php the_content(); ?>

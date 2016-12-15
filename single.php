@@ -1,13 +1,11 @@
-
 <?php get_header(); ?>
-[HOME]
   <div class="container">
     <div class="row">
-      <div class="col-lg-9">
+      <div class="col-lg-12">
         <h1> What we have to say </h1>
 
          <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
+         <article>
            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
            <!-- date() only shows date for post on that day, time() function better here -->
            <!-- add name in users section of Dashboard to offer better name display -->
@@ -16,15 +14,19 @@
               in <?php the_category( ', ' ); ?>
               <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a>
            </p>
+
            <div class="excerpt">
-             <?php the_excerpt(); ?>
+             <?php the_content(); ?>
+             <hr>
+            <?php comments_template(); ?>
            </div>
 
 
 
+         </article>
         <?php endwhile; endif; ?>
         </div>
-        <?php get_sidebar('blog'); ?>
+
       </div>
   </div>
 <?php get_footer(); ?>

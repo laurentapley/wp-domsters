@@ -1,7 +1,4 @@
-// * {
-//   padding: 0;
-//   margin: 0;
-// }
+
 
 body {
   margin: 1em 10%;
@@ -9,6 +6,9 @@ body {
   background-attachment: fixed;
   background-position: top left;
   background-repeat: repeat-x;
+  position: relative;
+
+
 }
 header {
   background-image: url(../img/guitarist.gif);
@@ -17,51 +17,25 @@ header {
   border-width: .1em;
   border-style: solid;
   border-bottom-width: 0;
-}
-#navigation {
-  background-image: url(../img/navbar.gif);
-  background-position: bottom left;
-  background-repeat: repeat-x;
-  border-width: .1em;
-  border-style: solid;
-  border-bottom-width: 0;
-  border-top-width: 0;
-  padding-left: 1%;
+  position: relative;
+  z-index: 1;
+  width: 100%;
 }
 
 h1 {font-family: 'Open Sans', sans-serif;}
 
-ul{
-  margin-bottom: 0px;
-}
-#navigation ul {
-  width: 100%;
-  overflow: hidden;
-}
-#navigation li {
-  display: inline;
-}
-#navigation li a {
-  display: block;
-  float: left;
-  padding: .5em 2em;
-  border-right: .1em solid;
-}
+li { list-style: none;}
 
-#navigation li a:first-child {
-  border-left: solid .1em;
-}
 div.body-container {
   margin: auto;
 }
 div.container {
-  margin: auto;
+  margin: 0px auto;
   width: 100%;
   min-height: 100vh;
   border-width: .1em;
   border-style: solid;
   border-top-width: 0;
-  padding: 2em 10%;
   line-height: 1.8em;
 
 }
@@ -77,20 +51,32 @@ div.container {
 #contact header {
   background-image: url(../img/drummer.gif);
 }
-.container img {
+div.container img {
   border-width: .1em;
   border-style: solid;
   outline-width: .1em;
   outline-style: solid;
 }
-#imagegallery li {
-  display: inline;
+ul#imagegallery {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  background-color: transparent;
 }
+
+
 #slideshow {
   width: 150px;
   height: 150px;
   position: relative;
+  top: 0;
+  left: 25%;
   overflow: hidden;
+  margin: 50px 0px;
 }
 img#frame {
   position: absolute;
@@ -102,9 +88,25 @@ img#frame {
 }
 img#preview {
   position: absolute;
+  top: 0;
+  left: 0;
   border-width: 0;
   outline-width: 0;
 }
+
+img#placeholder{
+  align-self: center;
+}
+
+div#gallery {
+  margin-bottom: 35px;
+}
+
+div.section {
+  margin: 55px auto;
+
+}
+
 dl {
   overflow: hidden;
 }
@@ -125,16 +127,13 @@ td {
 }
 
 footer {
-  background-image: url(../img/navbar.gif);
-  background-position: bottom left;
-  background-repeat: repeat-x;
-  padding-left: 1%;
+  background: linear-gradient(rgb(159, 162, 182),rgb(89, 86, 107));
   text-align: center;
   p {
-    padding: 1%;
-    text-transform: uppercase;
-    font-size: .5rem;
-    color: #ec8;
+    padding: 15px;
+    line-height: .75rem;
+    font-size: 1rem;
+    color: #445;
   }
 }
 
@@ -150,8 +149,8 @@ article {
     background: linear-gradient(rgb(159, 162, 182),rgb(89, 86, 107));
    }
   a {
-    color: #edc;
-    background-color: transparent;
+    color: rgb(63, 61, 75);
+    // background-color: transparent;
 
   }
   p {
@@ -167,18 +166,92 @@ article {
 }
 
 //ABOUT
-.popover {
-  background-color: red;
+div.section, div.intro{
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  h2, h1 {
+    background-color: rgb(159, 162, 182);
+    padding: 10px;
+    width: 100%;
+    margin-top: -5px;
+  }
+  p {
+    margin: 0px 5px;
+  }
 }
 
-//SIDEBAR
-aside.blog {
-  margin-top: 50px;
 
+
+ul#internalnav {
+  display: flex;
+  flex-direction: row;
+  // justify-content: space-around;
+  padding: 0px;
+  margin: 25px auto;
+  background-color: transparent;
+
+
+  li {
+  font-family: 'Bowlby One SC', cursive;
+  font: 5.8em;
+  color: rgb(63, 61, 75);
+  list-style: none;
+  a {
+    padding: 10px;
+  }
+}
 }
 
 //photos
 div#bwg_container1_0 {
   width: 100%;
   margin: 0px;
+}
+
+p#description {
+  text-align: center;
+}
+img#placeholder {
+  margin: auto;
+  text-align: center;
+}
+div#gallery {
+  text-align: center;
+}
+
+//FRONT_PAGE
+
+div.intro {
+  margin-top: 15px;
+}
+
+p#intro {
+  max-width: 500px;
+  margin: auto;
+  line-height: 45px;
+}
+
+
+
+.container {
+  color: #223;
+  background-color: #edc;
+  border-color: #667;
+}
+//contact
+.wpcf7-form {
+  width: 50%;
+  margin: auto;
+}
+.wpcf7-form-control.wpcf7-text, .wpcf7-form-control.wpcf7-textarea {
+  width: 100%;
+}
+
+.gigpress-listing {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  li {
+
+  }
 }

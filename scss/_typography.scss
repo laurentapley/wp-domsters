@@ -1,21 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Catamaran');
+
 body {
-  font-size: 76%;
-  font-family: "Helvetica","Arial",sans-serif;
+  font-size: 100%;
+  font-family: 'Catamaran', sans-serif;
 }
 body * {
-  font-size: 1em;
+
 }
 a {
   font-weight: bold;
   text-decoration: none;
 }
-#navigation {
-  font-family: "Lucida Grande","Helvetica","Arial",sans-serif;
+.nav.navbar-nav {
+  font-family: 'Bowlby One SC', cursive;
+  font-size:1.2em;
 }
-#navigation a {
-  text-decoration: none;
-  font-weight: bold;
-}
+
 .container {
   line-height: 1.8em;
 }
@@ -23,18 +23,24 @@ a {
   margin: 1em 0;
 }
 h1 {
-  font-family: "Georgia","Times New Roman",sans-serif;
-  font: 2.4em normal;
+    font-family: 'Bowlby One SC', cursive;
+    font: 5.4em;
+    color: rgb(63, 61, 75);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
 }
 h2 {
-  font-family: "Georgia","Times New Roman",sans-serif;
-  font: 1.8em normal;
-  margin-top: 1em;
+    font-family: 'Bowlby One SC', cursive;
+    font: 5.8em;
+    margin-top: 1em;
+    color: rgb(63, 61, 75);
 }
 h3 {
-  font-family: "Georgia","Times New Roman",sans-serif;
-  font: 1.4em normal;
-  margin-top: 1em;
+    font-family: 'Bowlby One SC', cursive;
+    font: 5.4em;
+    margin-top: 1em;
+    color: rgb(63, 61, 75);
 }
 #imagegallery li {
   list-style-type: none;
@@ -46,5 +52,5 @@ dd {
   margin-right: 3em;
 }
 textarea {
-  font-family: "Helvetica","Arial",sans-serif;
+  font-family: 'Catamaran', sans-serif;
 }
